@@ -16,6 +16,8 @@
 #define TEXT_HEIGHT 30.0
 
 UIColor *TDHexaColor(NSString *str) {
+    if (![str length]) return nil;
+
     unsigned x = 0;
     NSScanner *scanner = [NSScanner scannerWithString:str];
     [scanner scanHexInt:&x];
@@ -151,22 +153,22 @@ UIColor *TDHexaColor(NSString *str) {
             NSString *locStr = target[@"location"];
             CGFloat x = 0.0, y = 0.0;
             
-            if ([locStr isEqualToString:@"TopLeft"]) {
+            if ([locStr isEqualToString:@"topLeft"]) {
                 x = CGRectGetMinX(bounds);
                 y = CGRectGetMinY(bounds);
-            } else if ([locStr isEqualToString:@"MidLeft"]) {
+            } else if ([locStr isEqualToString:@"left"]) {
                 x = CGRectGetMinX(bounds);
                 y = CGRectGetMidY(bounds) - size.height*0.5;
-            } else if ([locStr isEqualToString:@"BottomLeft"]) {
+            } else if ([locStr isEqualToString:@"bottomLeft"]) {
                 x = CGRectGetMinX(bounds);
                 y = CGRectGetMaxY(bounds) - size.height;
-            } else if ([locStr isEqualToString:@"TopRight"]) {
+            } else if ([locStr isEqualToString:@"topRight"]) {
                 x = CGRectGetMaxX(bounds) - size.width;
                 y = CGRectGetMinY(bounds);
-            } else if ([locStr isEqualToString:@"MidRight"]) {
+            } else if ([locStr isEqualToString:@"right"]) {
                 x = CGRectGetMaxX(bounds) - size.width;
                 y = CGRectGetMidY(bounds) - size.height*0.5;
-            } else if ([locStr isEqualToString:@"BottomRight"]) {
+            } else if ([locStr isEqualToString:@"bottomRight"]) {
                 x = CGRectGetMaxX(bounds) - size.width;
                 y = CGRectGetMaxY(bounds) - size.height;
             } else {
@@ -221,7 +223,7 @@ UIColor *TDHexaColor(NSString *str) {
             tv.masksToBounds = NO;
             
             tv.string = name;
-            tv.fontSize = 26.0;
+            tv.fontSize = FONT_SIZE;
             tv.foregroundColor = [[UIColor blackColor] CGColor];
             tv.alignmentMode = kCAAlignmentCenter;
             

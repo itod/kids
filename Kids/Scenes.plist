@@ -19,7 +19,7 @@
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>location</key>
-					<string>TopLeft</string>
+					<string>topLeft</string>
 					<key>size</key>
 					<string>{130.0, 130.0}</string>
 				</dict>
@@ -33,7 +33,7 @@
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>location</key>
-					<string>MidLeft</string>
+					<string>left</string>
 					<key>size</key>
 					<string>{130.0, 130.0}</string>
 				</dict>
@@ -47,7 +47,7 @@
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>location</key>
-					<string>BottomLeft</string>
+					<string>bottomLeft</string>
 					<key>size</key>
 					<string>{130.0, 130.0}</string>
 				</dict>
@@ -61,7 +61,7 @@
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>location</key>
-					<string>TopRight</string>
+					<string>topRight</string>
 					<key>size</key>
 					<string>{130.0, 130.0}</string>
 				</dict>
@@ -75,7 +75,7 @@
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>location</key>
-					<string>MidRight</string>
+					<string>right</string>
 					<key>size</key>
 					<string>{130.0, 130.0}</string>
 				</dict>
@@ -89,7 +89,7 @@
 					<key>cornerRadius</key>
 					<integer>10</integer>
 					<key>location</key>
-					<string>BottomRight</string>
+					<string>bottomRight</string>
 					<key>size</key>
 					<string>{130.0, 130.0}</string>
 				</dict>
@@ -158,6 +158,64 @@
 				</dict>
 			</array>
 		</dict>
+        <dict>
+            <key>name</key>
+            <string>Beauty &amp; The Beast</string>
+            <key>targets</key>
+            <array>
+            </array>
+            <key>figures</key>
+            <array>
+                <dict>
+                    <key>name</key>
+                    <string>Belle</string>
+                    <key>imageName</key>
+                    <string>Belle</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Gaston</string>
+                    <key>imageName</key>
+                    <string>Gaston</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>LeFou</string>
+                    <key>imageName</key>
+                    <string>LeFou</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Beast</string>
+                    <key>imageName</key>
+                    <string>Beast</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Lumiere</string>
+                    <key>imageName</key>
+                    <string>Lumiere</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Cogsworth</string>
+                    <key>imageName</key>
+                    <string>Cogsworth</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Mrs Potts</string>
+                    <key>imageName</key>
+                    <string>MrsPotts</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Chip</string>
+                    <key>imageName</key>
+                    <string>Chip</string>
+                </dict>
+            </array>
+        </dict>
 	</array>
 </dict>
 </plist>
