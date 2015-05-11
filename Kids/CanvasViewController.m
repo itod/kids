@@ -37,7 +37,13 @@ UIColor *TDHexaColor(NSString *str) {
 @implementation CanvasViewController
 
 - (void)dealloc {
-    self.canvas = nil; 
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    for (CALayer *child in self.view.layer.sublayers) {
+        child.delegate = nil;
+    }
+    
+    self.canvas = nil;
     self.scene = nil;
     [super dealloc];
 }
@@ -48,11 +54,13 @@ UIColor *TDHexaColor(NSString *str) {
     TDAssert(_canvas);
     TDAssert(_scene);
     
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
     CGRect bounds = _canvas.bounds;
     bounds.size.height -= NAV_BAR_HEIGHT;
-    
 
-    [self layoutTargetsInBounds:bounds];
+    [self layoutTargets];
     
     // FIGURES
     {
@@ -182,8 +190,24 @@ UIColor *TDHexaColor(NSString *str) {
 //    CGContextFillRect(ctx, layer.frame);
 //}
 
+#pragma mark -
+#pragma mark Private
 
-- (void)layoutTargetsInBounds:(CGRect)bounds {
+- (void)orientationDidChange:(NSNotification *)n {
+    [self layoutTargets];
+}
+
+
+- (void)layoutTargets {
+    CGRect bounds = _canvas.bounds;
+    bounds.size.height -= NAV_BAR_HEIGHT;
+
+    for (CALayer *child in [[self.view.layer.sublayers copy] autorelease]) {
+        if (child != _canvas.layer) {
+            [child removeFromSuperlayer];
+        }
+    }
+    
     NSUInteger i = 0;
     for (id target in _scene[@"targets"]) {
         //NSString *name = target[@"name"];
