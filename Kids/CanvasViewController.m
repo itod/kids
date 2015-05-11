@@ -98,14 +98,14 @@ UIColor *TDHexaColor(NSString *str) {
             
             [v setValue:@(i) forKey:@"tag"];
             
-            UIColor *fillColor = TDHexaColor(target[@"fillColor"]);
-            TDAssert(fillColor);
+            UIColor *backgroundColor = TDHexaColor(target[@"backgroundColor"]);
+            TDAssert(backgroundColor);
 
-            UIColor *strokeColor = [UIColor blackColor];//TDHexaColor(@"00000000");
-            TDAssert(fillColor);
+            UIColor *borderColor = TDHexaColor(target[@"borderColor"]);
+            TDAssert(backgroundColor);
 
-            v.backgroundColor = [fillColor CGColor];
-            v.borderColor = [strokeColor CGColor];
+            v.backgroundColor = [backgroundColor CGColor];
+            v.borderColor = [borderColor CGColor];
             v.borderWidth = 10.0;
             v.cornerRadius = 10.0;
             
@@ -156,14 +156,14 @@ UIColor *TDHexaColor(NSString *str) {
             [v removeAllAnimations];
             v.delegate = self;
 
-//            UIColor *fillColor = TDHexaColor(figure[@"fillColor"]);
-//            TDAssert(fillColor);
+//            UIColor *backgroundColor = TDHexaColor(figure[@"backgroundColor"]);
+//            TDAssert(backgroundColor);
 //            
-//            UIColor *strokeColor = [UIColor blackColor];//TDHexaColor(@"00000000");
-//            TDAssert(fillColor);
+//            UIColor *borderColor = [UIColor blackColor];//TDHexaColor(@"00000000");
+//            TDAssert(backgroundColor);
 //            
-//            v.backgroundColor = [fillColor CGColor];
-//            v.borderColor = [strokeColor CGColor];
+//            v.backgroundColor = [backgroundColor CGColor];
+//            v.borderColor = [borderColor CGColor];
 //            v.borderWidth = 10.0;
 
             [_canvas.layer addSublayer:v];
