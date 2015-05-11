@@ -28,8 +28,11 @@
     CGPoint p = [[touches anyObject] locationInView:self];
     
     UIView *v = [self hitTest:p withEvent:evt];
-    NSLog(@"%@, %@", NSStringFromCGPoint(p), v);
+    //NSLog(@"%@, %@", NSStringFromCGPoint(p), v);
+    
     if (v != self) {
+        CGPoint vloc = v.center;
+        self.dragOffset = CGSizeMake(vloc.x - p.x, vloc.y - p.y);
         self.draggingView = v;
     }
 }
@@ -37,9 +40,10 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)evt {
     [super touchesMoved:touches withEvent:evt];
     
-    CGPoint p = [[touches anyObject] locationInView:self];
-
     if (_draggingView) {
+        CGPoint p = [[touches anyObject] locationInView:self];
+        p.x += _dragOffset.width;
+        p.y += _dragOffset.height;
         _draggingView.center = p;
     }
 }
@@ -48,6 +52,7 @@
     [super touchesEnded:touches withEvent:evt];
     
     self.draggingView = nil;
+    self.dragOffset = CGSizeZero;
 }
 
 @end
