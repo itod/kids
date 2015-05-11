@@ -135,16 +135,21 @@ UIColor *TDHexaColor(NSString *str) {
     for (id target in _scene[@"targets"]) {
         //NSString *name = target[@"name"];
         
-        CALayer *v = nil;
+        CALayer *v = [CALayer layer];
+
+        // IMAGE
+        {
+            NSString *imgName = target[@"imageName"];
+            if (imgName) {
+                UIImage *img = [UIImage imageNamed:imgName];
+                TDAssert(img);
+                
+                v.contents = (id)[img CGImage];
+            }
+        }
         
-        NSString *imgName = target[@"imageName"];
-        if (imgName) {
-            UIImage *img = [UIImage imageNamed:imgName];
-            TDAssert(img);
-            
-            v = [CALayer layer];
-            v.contents = img;
-        } else {
+        // FRAME
+        {
             TDAssert(target[@"location"]);
             TDAssert(target[@"size"]);
             
@@ -178,7 +183,6 @@ UIColor *TDHexaColor(NSString *str) {
             }
             
             CGRect frame = CGRectMake(round(x), round(y), size.width, size.height);
-            v = [CALayer layer];
             v.frame = frame;
         }
         

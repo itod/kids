@@ -136,9 +136,115 @@
 		</dict>
         <dict>
             <key>name</key>
-            <string>Beauty &amp; The Beast</string>
+            <string>Beauty &amp; the Beast</string>
             <key>targets</key>
             <array>
+            </array>
+            <key>figures</key>
+            <array>
+                <dict>
+                    <key>name</key>
+                    <string>Belle</string>
+                    <key>imageName</key>
+                    <string>Belle</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Gaston</string>
+                    <key>imageName</key>
+                    <string>Gaston</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>LeFou</string>
+                    <key>imageName</key>
+                    <string>LeFou</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Beast</string>
+                    <key>imageName</key>
+                    <string>Beast</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Lumiere</string>
+                    <key>imageName</key>
+                    <string>Lumiere</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Cogsworth</string>
+                    <key>imageName</key>
+                    <string>Cogsworth</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Mrs. Potts</string>
+                    <key>imageName</key>
+                    <string>MrsPotts</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Chip</string>
+                    <key>imageName</key>
+                    <string>Chip</string>
+                </dict>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Disney</string>
+            <key>targets</key>
+            <array>
+                <dict>
+                    <key>name</key>
+                    <string>The Little Mermaid</string>
+                    <key>imageName</key>
+                    <string>TLM</string>
+                    <key>backgroundColor</key>
+                    <string>177F42FF</string>
+                    <key>location</key>
+                    <string>topLeft</string>
+                    <key>size</key>
+                    <string>{300.0, 200.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Beauty &amp; the Beast</string>
+                    <key>imageName</key>
+                    <string>BATB</string>
+                    <key>backgroundColor</key>
+                    <string>FFFD33FF</string>
+                    <key>location</key>
+                    <string>topRight</string>
+                    <key>size</key>
+                    <string>{300.0, 200.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Aladdin</string>
+                    <key>imageName</key>
+                    <string>AladdinLogo</string>
+                    <key>backgroundColor</key>
+                    <string>7D22FCFF</string>
+                    <key>location</key>
+                    <string>bottomLeft</string>
+                    <key>size</key>
+                    <string>{300.0, 200.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>The Lion King</string>
+                    <key>imageName</key>
+                    <string>TLK</string>
+                    <key>backgroundColor</key>
+                    <string>FC7F20FF</string>
+                    <key>location</key>
+                    <string>bottomRight</string>
+                    <key>size</key>
+                    <string>{300.0, 200.0}</string>
+                </dict>
             </array>
             <key>figures</key>
             <array>
