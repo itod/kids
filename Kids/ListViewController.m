@@ -9,6 +9,8 @@
 #import "ListViewController.h"
 #import "CanvasViewController.h"
 
+#define SCENE_CELL_ID @"Scene"
+
 @interface ListViewController ()
 
 @end
@@ -55,10 +57,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)path {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:SCENE_CELL_ID];
     
     if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([self class])] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SCENE_CELL_ID] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
