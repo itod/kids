@@ -19,6 +19,56 @@
                     <key>strokeColor</key>
                     <string>00000000</string>
                 </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Marshall</string>
+                    <key>imageName</key>
+                    <string>Marshall</string>
+                    <key>fillColor</key>
+                    <string>00000000</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Rocky</string>
+                    <key>imageName</key>
+                    <string>Rocky</string>
+                    <key>fillColor</key>
+                    <string>00000000</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Zuma</string>
+                    <key>imageName</key>
+                    <string>Zuma</string>
+                    <key>fillColor</key>
+                    <string>00000000</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Rubble</string>
+                    <key>imageName</key>
+                    <string>Rubble</string>
+                    <key>fillColor</key>
+                    <string>00000000</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Sky</string>
+                    <key>imageName</key>
+                    <string>Sky</string>
+                    <key>fillColor</key>
+                    <string>00000000</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                </dict>
             </array>
         </dict>
     </array>

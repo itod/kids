@@ -14,8 +14,18 @@
 
 @implementation CanvasViewController
 
+- (instancetype)initWithScene:(NSDictionary *)scene {
+    NSAssert(scene, nil);
+    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+    if (self) {
+        self.scene = scene;
+    }
+    return self;
+}
+
 - (void)dealloc {
     self.canvas = nil;
+    self.scene = nil;
     [super dealloc];
 }
 
@@ -23,13 +33,15 @@
     [super viewDidLoad];
 
     NSAssert(_canvas, nil);
-    
-    NSArray *imgNames = @[@"Chase", @"Marshall", @"Rocky", @"Zuma", @"Rubble", @"Sky"];
+    NSAssert(_scene, nil);
     
     NSUInteger i = 0;
-    for (NSString *imgName in imgNames) {
+    for (id figure in _scene[@"figures"]) {
+        NSString *imgName = figure[@"imageName"];
+        
         UIImage *img = [UIImage imageNamed:imgName];
         UIView *iv = [[[UIImageView alloc] initWithImage:img] autorelease];
+        iv.tag = i;
         iv.userInteractionEnabled = YES;
         CGRect r = iv.frame;
         r.origin.x += i * 80.0;
