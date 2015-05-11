@@ -231,7 +231,7 @@ UIColor *TDHexaColor(NSString *str) {
     }
     
     if (tv) {
-        tv.position = CGPointMake(CGRectGetMidX(bounds), round(CGRectGetMaxY(bounds)-TEXT_HEIGHT*0.5));
+        tv.position = CGPointMake(round(CGRectGetMidX(bounds)), round(CGRectGetMaxY(bounds)-TEXT_HEIGHT*0.5));
     }
     
     if (iv) {
