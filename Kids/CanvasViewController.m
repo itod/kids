@@ -107,7 +107,7 @@ UIColor *TDHexaColor(NSString *str) {
             NSAssert(fillColor, nil);
             
             v.backgroundColor = fillColor;
-            [self.view addSubview:v];
+            [_canvas addSubview:v];
             
             ++i;
         }
