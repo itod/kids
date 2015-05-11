@@ -117,42 +117,35 @@ UIColor *TDHexaColor(NSString *str) {
         NSUInteger i = 0;
         for (id figure in _scene[@"figures"]) {
             
-            CALayer *v = nil;
+            CALayer *v = [CALayer layer];
+            [v removeAllAnimations];
+            [v setValue:@(i) forKey:@"tag"];
+            v.delegate = self;
+
+            CGSize size = CGSizeMake(100.0, 100.0);
             
             NSString *imgName = figure[@"imageName"];
             if (imgName) {
                 UIImage *img = [UIImage imageNamed:imgName];
                 TDAssert(img);
                 
-                v = [CALayer layer];
                 v.contents = (id)[img CGImage];
             } else {
                 TDAssert(figure[@"size"]);
                 
-                CGSize size = CGSizeFromString(figure[@"size"]);
-                CGRect frame = CGRectMake(0.0, 0.0, size.width, size.height);
-                v = [CALayer layer];
-                v.frame = frame;
+                size = CGSizeFromString(figure[@"size"]);
             }
-            
-            [v setValue:@(i) forKey:@"tag"];
             
             // FRAME
             {
-                CGFloat w = 100.0, h = 100.0;
-                CGRect canvasRect = CGRectInset(_canvas.bounds, w, h);
+                CGRect canvasRect = CGRectInset(_canvas.bounds, size.width, size.height);
                 
-                CGRect r = v.frame;
-                r.origin.x = round(drand48() * canvasRect.size.width);
-                r.origin.y = round(drand48() * canvasRect.size.height);
-                
-                r.size = CGSizeMake(w, h);
+                CGRect r = CGRectMake(round(drand48() * canvasRect.size.width),
+                                      round(drand48() * canvasRect.size.height),
+                                      size.width, size.height);
                 v.frame = r;
             }
             
-            [v removeAllAnimations];
-            v.delegate = self;
-
             UIColor *backgroundColor = TDHexaColor(figure[@"backgroundColor"]);
             UIColor *borderColor = TDHexaColor(figure[@"borderColor"]);
             
@@ -160,7 +153,7 @@ UIColor *TDHexaColor(NSString *str) {
             v.borderColor = [borderColor CGColor];
             v.borderWidth = [figure[@"borderWidth"] doubleValue];
             v.cornerRadius = [figure[@"cornerRadius"] doubleValue];
-
+            
             [_canvas.layer addSublayer:v];
             ++i;
         }
@@ -182,5 +175,11 @@ UIColor *TDHexaColor(NSString *str) {
 - (id <CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)evt {
    return [NSNull null];
 }
+
+//- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+//    NSLog(@"%@", layer);
+//    CGContextSetFillColorWithColor(ctx, [[UIColor purpleColor] CGColor]);
+//    CGContextFillRect(ctx, layer.frame);
+//}
 
 @end
