@@ -40,6 +40,9 @@ UIColor *TDHexaColor(NSString *str) {
     TDAssert(_canvas);
     TDAssert(_scene);
     
+    CGRect bounds = _canvas.bounds;
+    bounds.size.height -= 44.0;
+
     // TARGETS
     {
         NSUInteger i = 0;
@@ -55,9 +58,39 @@ UIColor *TDHexaColor(NSString *str) {
                 
                 v = [[[UIImageView alloc] initWithImage:img] autorelease];
             } else {
-                TDAssert(target[@"frame"]);
+                TDAssert(target[@"location"]);
+                TDAssert(target[@"size"]);
+
+                CGSize size = CGSizeFromString(target[@"size"]);
+
+                NSString *locStr = target[@"location"];
+                CGFloat x = 0.0, y = 0.0;
                 
-                CGRect frame = CGRectFromString(target[@"frame"]);
+                if ([locStr isEqualToString:@"TopLeft"]) {
+                    x = CGRectGetMinX(bounds);
+                    y = CGRectGetMinY(bounds);
+                } else if ([locStr isEqualToString:@"MidLeft"]) {
+                    x = CGRectGetMinX(bounds);
+                    y = CGRectGetMidY(bounds) - size.height*0.5;
+                } else if ([locStr isEqualToString:@"BottomLeft"]) {
+                    x = CGRectGetMinX(bounds);
+                    y = CGRectGetMaxY(bounds) - size.height;
+                } else if ([locStr isEqualToString:@"TopRight"]) {
+                    x = CGRectGetMaxX(bounds) - size.width;
+                    y = CGRectGetMinY(bounds);
+                } else if ([locStr isEqualToString:@"MidRight"]) {
+                    x = CGRectGetMaxX(bounds) - size.width;
+                    y = CGRectGetMidY(bounds) - size.height*0.5;
+                } else if ([locStr isEqualToString:@"BottomRight"]) {
+                    x = CGRectGetMaxX(bounds) - size.width;
+                    y = CGRectGetMaxY(bounds) - size.height;
+                } else {
+                    CGPoint locPt = CGPointFromString(locStr);
+                    x = locPt.x;
+                    y = locPt.y;
+                }
+                
+                CGRect frame = CGRectMake(round(x), round(y), size.width, size.height);
                 v = [[[UIView alloc] initWithFrame:frame] autorelease];
             }
             

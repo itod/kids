@@ -14,10 +14,72 @@
                     <string>Blue</string>
                     <key>fillColor</key>
                     <string>0000FFFF</string>
-                    <key>strokeColo</key>
+                    <key>strokeColor</key>
                     <string>00000000</string>
-                    <key>frame</key>
-                    <string>{{0.0, 0.0}, {100.0, 100.0}}</string>
+                    <key>location</key>
+                    <string>TopLeft</string>
+                    <key>size</key>
+                    <string>{100.0, 100.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Red</string>
+                    <key>fillColor</key>
+                    <string>FF0000FF</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                    <key>location</key>
+                    <string>MidLeft</string>
+                    <key>size</key>
+                    <string>{100.0, 100.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Green</string>
+                    <key>fillColor</key>
+                    <string>00FF00FF</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                    <key>location</key>
+                    <string>BottomLeft</string>
+                    <key>size</key>
+                    <string>{100.0, 100.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Orange</string>
+                    <key>fillColor</key>
+                    <string>0000FFFF</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                    <key>location</key>
+                    <string>TopRight</string>
+                    <key>size</key>
+                    <string>{100.0, 100.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Yellow</string>
+                    <key>fillColor</key>
+                    <string>FF0000FF</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                    <key>location</key>
+                    <string>MidRight</string>
+                    <key>size</key>
+                    <string>{100.0, 100.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Pink</string>
+                    <key>fillColor</key>
+                    <string>00FF00FF</string>
+                    <key>strokeColor</key>
+                    <string>00000000</string>
+                    <key>location</key>
+                    <string>BottomRight</string>
+                    <key>size</key>
+                    <string>{100.0, 100.0}</string>
                 </dict>
             </array>
             <key>figures</key>
