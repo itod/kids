@@ -31,11 +31,11 @@
     
     CGPoint p = [[touches anyObject] locationInView:self];
     
-    UIView *v = [self hitTest:p withEvent:evt];
+    CALayer *v = [self.layer hitTest:p];
     //NSLog(@"%@, %@", NSStringFromCGPoint(p), v);
     
-    if (v != self) {
-        CGPoint vloc = v.center;
+    if (v != self.layer) {
+        CGPoint vloc = v.position;
         self.dragOffset = CGSizeMake(vloc.x - p.x, vloc.y - p.y);
         self.draggingView = v;
     }
@@ -48,7 +48,7 @@
         CGPoint p = [[touches anyObject] locationInView:self];
         p.x += _dragOffset.width;
         p.y += _dragOffset.height;
-        _draggingView.center = p;
+        _draggingView.position = p;
     }
 }
 

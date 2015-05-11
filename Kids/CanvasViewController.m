@@ -42,21 +42,22 @@ UIColor *TDHexaColor(NSString *str) {
     
     CGRect bounds = _canvas.bounds;
     bounds.size.height -= 44.0;
-
+    
     // TARGETS
     {
         NSUInteger i = 0;
         for (id target in _scene[@"targets"]) {
             //NSString *name = target[@"name"];
             
-            UIView *v = nil;
+            CALayer *v = nil;
             
             NSString *imgName = target[@"imageName"];
             if (imgName) {
                 UIImage *img = [UIImage imageNamed:imgName];
                 TDAssert(img);
                 
-                v = [[[UIImageView alloc] initWithImage:img] autorelease];
+                v = [CALayer layer];
+                v.contents = img;
             } else {
                 TDAssert(target[@"location"]);
                 TDAssert(target[@"size"]);
@@ -91,16 +92,24 @@ UIColor *TDHexaColor(NSString *str) {
                 }
                 
                 CGRect frame = CGRectMake(round(x), round(y), size.width, size.height);
-                v = [[[UIView alloc] initWithFrame:frame] autorelease];
+                v = [CALayer layer];
+                v.frame = frame;
             }
             
-            v.tag = i;
+            [v setValue:@(i) forKey:@"tag"];
             
             UIColor *fillColor = TDHexaColor(target[@"fillColor"]);
             TDAssert(fillColor);
+
+            UIColor *strokeColor = [UIColor blackColor];//TDHexaColor(@"00000000");
+            TDAssert(fillColor);
+
+            v.backgroundColor = [fillColor CGColor];
+            v.borderColor = [strokeColor CGColor];
+            v.borderWidth = 10.0;
+            v.cornerRadius = 10.0;
             
-            v.backgroundColor = fillColor;
-            [self.view insertSubview:v belowSubview:_canvas];
+            [self.view.layer insertSublayer:v below:_canvas.layer];
             
             ++i;
         }
@@ -111,23 +120,25 @@ UIColor *TDHexaColor(NSString *str) {
         NSUInteger i = 0;
         for (id figure in _scene[@"figures"]) {
             
-            UIView *v = nil;
+            CALayer *v = nil;
             
             NSString *imgName = figure[@"imageName"];
             if (imgName) {
                 UIImage *img = [UIImage imageNamed:imgName];
                 TDAssert(img);
                 
-                v = [[[UIImageView alloc] initWithImage:img] autorelease];
+                v = [CALayer layer];
+                v.contents = (id)[img CGImage];
             } else {
                 TDAssert(figure[@"size"]);
                 
                 CGSize size = CGSizeFromString(figure[@"size"]);
-                v = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, size.width, size.height)] autorelease];
+                CGRect frame = CGRectMake(0.0, 0.0, size.width, size.height);
+                v = [CALayer layer];
+                v.frame = frame;
             }
             
-            v.tag = i;
-            v.userInteractionEnabled = YES;
+            [v setValue:@(i) forKey:@"tag"];
             
             // FRAME
             {
@@ -142,7 +153,20 @@ UIColor *TDHexaColor(NSString *str) {
                 v.frame = r;
             }
             
-            [_canvas addSubview:v];
+            [v removeAllAnimations];
+            v.delegate = self;
+
+//            UIColor *fillColor = TDHexaColor(figure[@"fillColor"]);
+//            TDAssert(fillColor);
+//            
+//            UIColor *strokeColor = [UIColor blackColor];//TDHexaColor(@"00000000");
+//            TDAssert(fillColor);
+//            
+//            v.backgroundColor = [fillColor CGColor];
+//            v.borderColor = [strokeColor CGColor];
+//            v.borderWidth = 10.0;
+
+            [_canvas.layer addSublayer:v];
             ++i;
         }
     }
@@ -155,6 +179,13 @@ UIColor *TDHexaColor(NSString *str) {
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+#pragma mark -
+#pragma mark CALayerDelegate
+
+- (id <CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)evt {
+   return [NSNull null];
 }
 
 @end

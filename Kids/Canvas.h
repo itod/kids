@@ -10,6 +10,6 @@
 
 @interface Canvas : UIView
 
-@property (nonatomic, retain) UIView *draggingView;
+@property (nonatomic, retain) CALayer *draggingView;
 @property (nonatomic, assign) CGSize dragOffset;
 @end
