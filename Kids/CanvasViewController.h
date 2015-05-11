@@ -14,6 +14,7 @@
 
 - (instancetype)initWithScene:(NSDictionary *)scene;
 
+@property (nonatomic, retain) IBOutlet UIView *containerView;
 @property (nonatomic, retain) IBOutlet Canvas *canvas;
 @property (nonatomic, retain) NSDictionary *scene;
 @end

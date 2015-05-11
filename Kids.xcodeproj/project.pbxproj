@@ -37,6 +37,7 @@
 		D367360A1B003902006458D7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		D367360E1B0039DE006458D7 /* Scenes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Scenes.plist; sourceTree = "<group>"; };
 		D36736101B003D0C006458D7 /* CanvasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasViewController.xib; sourceTree = "<group>"; };
+		D38DE4CF1B00F8770042F563 /* Kids-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kids-Prefix.pch"; sourceTree = "<group>"; };
 		D392144F1B00144500927037 /* Kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39214531B00144500927037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39214541B00144500927037 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 				D367360E1B0039DE006458D7 /* Scenes.plist */,
 				D39214531B00144500927037 /* Info.plist */,
 				D39214541B00144500927037 /* main.m */,
+				D38DE4CF1B00F8770042F563 /* Kids-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -370,6 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "Kids/Kids-Prefix.pch";
 				INFOPLIST_FILE = Kids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,6 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "Kids/Kids-Prefix.pch";
 				INFOPLIST_FILE = Kids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

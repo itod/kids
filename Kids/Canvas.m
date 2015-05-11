@@ -15,12 +15,16 @@
     [super dealloc];
 }
 
-- (void)drawRect:(CGRect)dirtyRect {
-    [[UIColor redColor] setFill];
-    
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextFillRect(ctx, self.bounds);
+- (BOOL)isOpaque {
+    return NO;
 }
+
+//- (void)drawRect:(CGRect)dirtyRect {
+//    [[UIColor redColor] setFill];
+//    
+//    CGContextRef ctx = UIGraphicsGetCurrentContext();
+//    CGContextFillRect(ctx, self.bounds);
+//}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)evt {
     [super touchesEnded:touches withEvent:evt];

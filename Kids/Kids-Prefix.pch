@@ -1,0 +1,13 @@
+//
+//  Kids-Prefix.pch
+//  Kids
+//
+//  Created by Todd Ditchendorf on 5/11/15.
+//  Copyright (c) 2015 Todd Ditchendorf. All rights reserved.
+//
+
+#define TDAssertMainThread() NSAssert1([NSThread isMainThread], @"%s should be called on the main thread only.", __PRETTY_FUNCTION__);
+#define TDAssertNotMainThread() NSAssert1(![NSThread isMainThread], @"%s should never be called on the main thread.", __PRETTY_FUNCTION__);
+
+#define TDAssert(expr) NSAssert((expr), @"assertion failure in %s.", __PRETTY_FUNCTION__);
+#define TDCAssert(expr) NSCAssert((expr), @"assertion failure in %s.", __PRETTY_FUNCTION__);

@@ -37,6 +37,7 @@ UIColor *TDHexaColor(NSString *str) {
 }
 
 - (void)dealloc {
+    self.containerView = nil;
     self.canvas = nil;
     self.scene = nil;
     [super dealloc];
@@ -45,9 +46,43 @@ UIColor *TDHexaColor(NSString *str) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    //NSAssert(_containerView, nil);
     NSAssert(_canvas, nil);
     NSAssert(_scene, nil);
     
+    // TARGETS
+    {
+        NSUInteger i = 0;
+        for (id target in _scene[@"targets"]) {
+            //NSString *name = target[@"name"];
+            
+            UIView *v = nil;
+            
+            NSString *imgName = target[@"imageName"];
+            if (imgName) {
+                UIImage *img = [UIImage imageNamed:imgName];
+                NSAssert(img, nil);
+                
+                v = [[[UIImageView alloc] initWithImage:img] autorelease];
+            } else {
+                NSAssert(target[@"frame"], nil);
+                
+                CGRect frame = CGRectFromString(target[@"frame"]);
+                v = [[[UIView alloc] initWithFrame:frame] autorelease];
+            }
+            
+            v.tag = i;
+            
+            UIColor *fillColor = TDHexaColor(target[@"fillColor"]);
+            NSAssert(fillColor, nil);
+            
+            v.backgroundColor = fillColor;
+            [self.view addSubview:v];
+            
+            ++i;
+        }
+    }
+
     // FIGURES
     {
         NSUInteger i = 0;
@@ -76,39 +111,6 @@ UIColor *TDHexaColor(NSString *str) {
             v.frame = r;
             
             [_canvas addSubview:v];
-            ++i;
-        }
-    }
-    
-    // TARGETS
-    {
-        NSUInteger i = 0;
-        for (id target in _scene[@"targets"]) {
-            //NSString *name = target[@"name"];
-            
-            UIView *v = nil;
-            
-            NSString *imgName = target[@"imageName"];
-            if (imgName) {
-                UIImage *img = [UIImage imageNamed:imgName];
-                NSAssert(img, nil);
-                
-                v = [[[UIImageView alloc] initWithImage:img] autorelease];
-            } else {
-                NSAssert(target[@"frame"], nil);
-                
-                CGRect frame = CGRectFromString(target[@"frame"]);
-                v = [[[UIView alloc] initWithFrame:frame] autorelease];
-            }
-
-            v.tag = i;
-            
-            UIColor *fillColor = TDHexaColor(target[@"fillColor"]);
-            NSAssert(fillColor, nil);
-            
-            v.backgroundColor = fillColor;
-            [_canvas addSubview:v];
-            
             ++i;
         }
     }
