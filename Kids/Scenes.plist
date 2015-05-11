@@ -7,6 +7,19 @@
         <dict>
             <key>name</key>
             <string>Paw Patrol</string>
+            <key>targets</key>
+            <array>
+                <dict>
+                    <key>name</key>
+                    <string>Blue</string>
+                    <key>fillColor</key>
+                    <string>0000FFFF</string>
+                    <key>strokeColo</key>
+                    <string>00000000</string>
+                    <key>frame</key>
+                    <string>{{0.0, 0.0}, {100.0, 100.0}}</string>
+                </dict>
+            </array>
             <key>figures</key>
             <array>
                 <dict>
