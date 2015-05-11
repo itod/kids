@@ -9,6 +9,8 @@
 #import "CanvasViewController.h"
 #import "Canvas.h"
 
+#define NAV_BAR_HEIGHT 44.0
+
 #define FIGURE_WIDTH 120.0
 #define FIGURE_HEIGHT 120.0
 
@@ -47,7 +49,7 @@ UIColor *TDHexaColor(NSString *str) {
     TDAssert(_scene);
     
     CGRect bounds = _canvas.bounds;
-    bounds.size.height -= 44.0;
+    bounds.size.height -= NAV_BAR_HEIGHT;
     
     // TARGETS
     {
@@ -172,7 +174,7 @@ UIColor *TDHexaColor(NSString *str) {
             
             // FRAME
             {
-                CGRect canvasRect = CGRectInset(_canvas.bounds, size.width, size.height);
+                CGRect canvasRect = CGRectInset(bounds, size.width, size.height);
                 
                 CGRect r = CGRectMake(round(drand48() * canvasRect.size.width),
                                       round(drand48() * canvasRect.size.height),
