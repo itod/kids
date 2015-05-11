@@ -29,10 +29,10 @@
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Scenes" ofType:@"plist"];
     id plist = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSAssert([plist count], nil);
+    TDAssert([plist count]);
     
     NSArray *scenes = plist[@"scenes"];
-    NSAssert([scenes count], nil);
+    TDAssert([scenes count]);
     
     self.scenes = scenes;
     
@@ -74,16 +74,11 @@
     
     cell.tag = path.row;
     
-//    if (!cell) {
-//        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SCENE_CELL_ID] autorelease];
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    }
-    
     id scene = _scenes[path.row];
-    NSAssert(scene, nil);
+    TDAssert(scene);
     
     NSString *name = scene[@"name"];
-    NSAssert([name length], nil);
+    TDAssert([name length]);
     
     cell.textLabel.text = name;
     return cell;
@@ -91,17 +86,5 @@
 
 #pragma mark -
 #pragma mark UITableViewDelegate
-
-//- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path {
-//    NSAssert(path.row >= 0 && path.row < [_scenes count], nil);
-//    
-//    id scene = _scenes[path.row];
-//    
-//    
-//    CanvasViewController *cvc = [[[CanvasViewController alloc] initWithScene:scene] autorelease];
-//    [self.navigationController pushViewController:cvc animated:YES];
-//    
-//    return path;
-//}
 
 @end

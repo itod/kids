@@ -7,6 +7,7 @@
 //
 
 #import "CanvasViewController.h"
+#import "Canvas.h"
 
 UIColor *TDHexaColor(NSString *str) {
     unsigned x = 0;
@@ -27,17 +28,7 @@ UIColor *TDHexaColor(NSString *str) {
 
 @implementation CanvasViewController
 
-//- (instancetype)initWithScene:(NSDictionary *)scene {
-//    NSAssert(scene, nil);
-//    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
-//    if (self) {
-//        self.scene = scene;
-//    }
-//    return self;
-//}
-
 - (void)dealloc {
-    self.containerView = nil;
     self.canvas = nil;
     self.scene = nil;
     [super dealloc];
@@ -46,9 +37,8 @@ UIColor *TDHexaColor(NSString *str) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //NSAssert(_containerView, nil);
-    NSAssert(_canvas, nil);
-    NSAssert(_scene, nil);
+    TDAssert(_canvas);
+    TDAssert(_scene);
     
     // TARGETS
     {
@@ -61,11 +51,11 @@ UIColor *TDHexaColor(NSString *str) {
             NSString *imgName = target[@"imageName"];
             if (imgName) {
                 UIImage *img = [UIImage imageNamed:imgName];
-                NSAssert(img, nil);
+                TDAssert(img);
                 
                 v = [[[UIImageView alloc] initWithImage:img] autorelease];
             } else {
-                NSAssert(target[@"frame"], nil);
+                TDAssert(target[@"frame"]);
                 
                 CGRect frame = CGRectFromString(target[@"frame"]);
                 v = [[[UIView alloc] initWithFrame:frame] autorelease];
@@ -74,10 +64,10 @@ UIColor *TDHexaColor(NSString *str) {
             v.tag = i;
             
             UIColor *fillColor = TDHexaColor(target[@"fillColor"]);
-            NSAssert(fillColor, nil);
+            TDAssert(fillColor);
             
             v.backgroundColor = fillColor;
-            [self.view addSubview:v];
+            [self.view insertSubview:v belowSubview:_canvas];
             
             ++i;
         }
@@ -93,11 +83,11 @@ UIColor *TDHexaColor(NSString *str) {
             NSString *imgName = figure[@"imageName"];
             if (imgName) {
                 UIImage *img = [UIImage imageNamed:imgName];
-                NSAssert(img, nil);
+                TDAssert(img);
                 
                 v = [[[UIImageView alloc] initWithImage:img] autorelease];
             } else {
-                NSAssert(figure[@"size"], nil);
+                TDAssert(figure[@"size"]);
                 
                 CGSize size = CGSizeFromString(figure[@"size"]);
                 v = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, size.width, size.height)] autorelease];
