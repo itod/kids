@@ -9,8 +9,6 @@
 #import "CanvasViewController.h"
 #import "Canvas.h"
 
-#define NAV_BAR_HEIGHT 44.0
-
 #define FIGURE_WIDTH 120.0
 #define FIGURE_HEIGHT 120.0
 
@@ -56,90 +54,9 @@ UIColor *TDHexaColor(NSString *str) {
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+
+    [self performSelector:@selector(doLayout) withObject:nil afterDelay:0.0];
     
-    CGRect bounds = _canvas.bounds;
-    bounds.size.height -= NAV_BAR_HEIGHT;
-
-    [self layoutTargets];
-    
-    // FIGURES
-    {
-        NSUInteger i = 0;
-        for (id figure in _scene[@"figures"]) {
-            
-            CALayer *v = [CALayer layer];
-            [v removeAllAnimations];
-            [v setValue:@(i) forKey:@"tag"];
-            v.delegate = self;
-            v.masksToBounds = NO;
-            v.contentsGravity = kCAGravityCenter;
-
-            CGSize size = CGSizeMake(FIGURE_WIDTH, FIGURE_HEIGHT);
-
-            NSString *name = figure[@"name"];
-            if (name) {
-                CATextLayer *tv = [CATextLayer layer];
-                [tv removeAllAnimations];
-                [tv setValue:@(-1) forKey:@"tag"];
-                [tv setValue:@"name" forKey:@"id"];
-                tv.delegate = self;
-                tv.masksToBounds = NO;
-                
-                tv.string = name;
-                tv.fontSize = 26.0;
-                tv.foregroundColor = [[UIColor blackColor] CGColor];
-                tv.alignmentMode = kCAAlignmentCenter;
-                
-                tv.frame = CGRectMake(0.0, 0.0, size.width, TEXT_HEIGHT);
-
-                [v addSublayer:tv];
-            }
-            
-            NSString *imgName = figure[@"imageName"];
-            if (imgName) {
-                UIImage *img = [UIImage imageNamed:imgName];
-                TDAssert(img);
-                
-                CALayer *iv = [CALayer layer];
-                iv.delegate = self;
-                [iv setValue:@(-1) forKey:@"tag"];
-                [iv setValue:@"image" forKey:@"id"];
-
-                iv.contents = (id)[img CGImage];
-                iv.frame = CGRectMake(0.0, 0.0, size.width - TEXT_HEIGHT, size.height - TEXT_HEIGHT);
-                [v addSublayer:iv];
-            } else {
-                TDAssert(figure[@"size"]);
-                
-                size = CGSizeFromString(figure[@"size"]);
-            }
-            
-            // FRAME
-            {
-                CGRect canvasRect = CGRectInset(bounds, size.width, size.height);
-                
-                CGRect r = CGRectMake(round(drand48() * canvasRect.size.width),
-                                      round(drand48() * canvasRect.size.height),
-                                      size.width, size.height);
-                v.frame = r;
-            }
-            
-            UIColor *backgroundColor = TDHexaColor(figure[@"backgroundColor"]);
-            UIColor *borderColor = TDHexaColor(figure[@"borderColor"]);
-            
-            v.backgroundColor = [backgroundColor CGColor];
-            v.borderColor = [borderColor CGColor];
-            v.borderWidth = [figure[@"borderWidth"] doubleValue];
-            v.cornerRadius = [figure[@"cornerRadius"] doubleValue];
-
-//            v.borderColor = [[UIColor blackColor] CGColor];
-//            v.borderWidth = 10.0;
-//            v.cornerRadius = 10.0;
-
-            [_canvas.layer addSublayer:v];
-            ++i;
-        }
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -197,10 +114,14 @@ UIColor *TDHexaColor(NSString *str) {
     [self layoutTargets];
 }
 
+- (void)doLayout {
+    [self layoutTargets];
+    [self layoutFigures];
+}
 
 - (void)layoutTargets {
     CGRect bounds = _canvas.bounds;
-    bounds.size.height -= NAV_BAR_HEIGHT;
+//    bounds.size.height -= NAV_BAR_HEIGHT;
 
     for (CALayer *child in [[self.view.layer.sublayers copy] autorelease]) {
         if (child != _canvas.layer) {
@@ -271,6 +192,86 @@ UIColor *TDHexaColor(NSString *str) {
         
         [self.view.layer insertSublayer:v below:_canvas.layer];
         
+        ++i;
+    }
+}
+
+- (void)layoutFigures {
+    CGRect bounds = _canvas.bounds;
+
+    NSUInteger i = 0;
+    for (id figure in _scene[@"figures"]) {
+        
+        CALayer *v = [CALayer layer];
+        [v removeAllAnimations];
+        [v setValue:@(i) forKey:@"tag"];
+        v.delegate = self;
+        v.masksToBounds = NO;
+        v.contentsGravity = kCAGravityCenter;
+        
+        CGSize size = CGSizeMake(FIGURE_WIDTH, FIGURE_HEIGHT);
+        
+        NSString *name = figure[@"name"];
+        if (name) {
+            CATextLayer *tv = [CATextLayer layer];
+            [tv removeAllAnimations];
+            [tv setValue:@(-1) forKey:@"tag"];
+            [tv setValue:@"name" forKey:@"id"];
+            tv.delegate = self;
+            tv.masksToBounds = NO;
+            
+            tv.string = name;
+            tv.fontSize = 26.0;
+            tv.foregroundColor = [[UIColor blackColor] CGColor];
+            tv.alignmentMode = kCAAlignmentCenter;
+            
+            tv.frame = CGRectMake(0.0, 0.0, size.width, TEXT_HEIGHT);
+            
+            [v addSublayer:tv];
+        }
+        
+        NSString *imgName = figure[@"imageName"];
+        if (imgName) {
+            UIImage *img = [UIImage imageNamed:imgName];
+            TDAssert(img);
+            
+            CALayer *iv = [CALayer layer];
+            iv.delegate = self;
+            [iv setValue:@(-1) forKey:@"tag"];
+            [iv setValue:@"image" forKey:@"id"];
+            
+            iv.contents = (id)[img CGImage];
+            iv.frame = CGRectMake(0.0, 0.0, size.width - TEXT_HEIGHT, size.height - TEXT_HEIGHT);
+            [v addSublayer:iv];
+        } else {
+            TDAssert(figure[@"size"]);
+            
+            size = CGSizeFromString(figure[@"size"]);
+        }
+        
+        // FRAME
+        {
+            CGRect canvasRect = CGRectInset(bounds, size.width, size.height);
+            
+            CGRect r = CGRectMake(round(drand48() * canvasRect.size.width),
+                                  round(drand48() * canvasRect.size.height),
+                                  size.width, size.height);
+            v.frame = r;
+        }
+        
+        UIColor *backgroundColor = TDHexaColor(figure[@"backgroundColor"]);
+        UIColor *borderColor = TDHexaColor(figure[@"borderColor"]);
+        
+        v.backgroundColor = [backgroundColor CGColor];
+        v.borderColor = [borderColor CGColor];
+        v.borderWidth = [figure[@"borderWidth"] doubleValue];
+        v.cornerRadius = [figure[@"cornerRadius"] doubleValue];
+        
+        //            v.borderColor = [[UIColor blackColor] CGColor];
+        //            v.borderWidth = 10.0;
+        //            v.cornerRadius = 10.0;
+        
+        [_canvas.layer addSublayer:v];
         ++i;
     }
 }
