@@ -19,7 +19,7 @@
                     <key>location</key>
                     <string>TopLeft</string>
                     <key>size</key>
-                    <string>{100.0, 100.0}</string>
+                    <string>{130.0, 130.0}</string>
                 </dict>
                 <dict>
                     <key>name</key>
@@ -31,7 +31,7 @@
                     <key>location</key>
                     <string>MidLeft</string>
                     <key>size</key>
-                    <string>{100.0, 100.0}</string>
+                    <string>{130.0, 130.0}</string>
                 </dict>
                 <dict>
                     <key>name</key>
@@ -43,43 +43,43 @@
                     <key>location</key>
                     <string>BottomLeft</string>
                     <key>size</key>
-                    <string>{100.0, 100.0}</string>
+                    <string>{130.0, 130.0}</string>
                 </dict>
                 <dict>
                     <key>name</key>
                     <string>Orange</string>
                     <key>fillColor</key>
-                    <string>0000FFFF</string>
+                    <string>FC7F20FF</string>
                     <key>strokeColor</key>
                     <string>00000000</string>
                     <key>location</key>
                     <string>TopRight</string>
                     <key>size</key>
-                    <string>{100.0, 100.0}</string>
+                    <string>{130.0, 130.0}</string>
                 </dict>
                 <dict>
                     <key>name</key>
                     <string>Yellow</string>
                     <key>fillColor</key>
-                    <string>FF0000FF</string>
+                    <string>FFFD33FF</string>
                     <key>strokeColor</key>
                     <string>00000000</string>
                     <key>location</key>
                     <string>MidRight</string>
                     <key>size</key>
-                    <string>{100.0, 100.0}</string>
+                    <string>{130.0, 130.0}</string>
                 </dict>
                 <dict>
                     <key>name</key>
                     <string>Pink</string>
                     <key>fillColor</key>
-                    <string>00FF00FF</string>
+                    <string>FB6BFDFF</string>
                     <key>strokeColor</key>
                     <string>00000000</string>
                     <key>location</key>
                     <string>BottomRight</string>
                     <key>size</key>
-                    <string>{100.0, 100.0}</string>
+                    <string>{130.0, 130.0}</string>
                 </dict>
             </array>
             <key>figures</key>
