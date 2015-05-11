@@ -296,6 +296,54 @@
                     <key>imageName</key>
                     <string>Chip</string>
                 </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Aladdin</string>
+                    <key>imageName</key>
+                    <string>Aladdin</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Jasmine</string>
+                    <key>imageName</key>
+                    <string>Jasmine</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Jafar</string>
+                    <key>imageName</key>
+                    <string>Jafar</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Abu</string>
+                    <key>imageName</key>
+                    <string>Abu</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Genie</string>
+                    <key>imageName</key>
+                    <string>Genie</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Rajah</string>
+                    <key>imageName</key>
+                    <string>Rajah</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Iago</string>
+                    <key>imageName</key>
+                    <string>Iago</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Sultan</string>
+                    <key>imageName</key>
+                    <string>Sultan</string>
+                </dict>
             </array>
         </dict>
 	</array>
