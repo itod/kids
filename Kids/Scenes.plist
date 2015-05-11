@@ -16,6 +16,8 @@
 					<string>0000FFFF</string>
 					<key>borderColor</key>
 					<string>00000000</string>
+					<key>cornerRadius</key>
+					<integer>10</integer>
 					<key>location</key>
 					<string>TopLeft</string>
 					<key>size</key>
@@ -28,6 +30,8 @@
 					<string>FF0000FF</string>
 					<key>borderColor</key>
 					<string>00000000</string>
+					<key>cornerRadius</key>
+					<integer>10</integer>
 					<key>location</key>
 					<string>MidLeft</string>
 					<key>size</key>
@@ -40,6 +44,8 @@
 					<string>00FF00FF</string>
 					<key>borderColor</key>
 					<string>00000000</string>
+					<key>cornerRadius</key>
+					<integer>10</integer>
 					<key>location</key>
 					<string>BottomLeft</string>
 					<key>size</key>
@@ -52,6 +58,8 @@
 					<string>FC7F20FF</string>
 					<key>borderColor</key>
 					<string>00000000</string>
+					<key>cornerRadius</key>
+					<integer>10</integer>
 					<key>location</key>
 					<string>TopRight</string>
 					<key>size</key>
@@ -64,6 +72,8 @@
 					<string>FFFD33FF</string>
 					<key>borderColor</key>
 					<string>00000000</string>
+					<key>cornerRadius</key>
+					<integer>10</integer>
 					<key>location</key>
 					<string>MidRight</string>
 					<key>size</key>
@@ -76,6 +86,8 @@
 					<string>FB6BFDFF</string>
 					<key>borderColor</key>
 					<string>00000000</string>
+					<key>cornerRadius</key>
+					<integer>10</integer>
 					<key>location</key>
 					<string>BottomRight</string>
 					<key>size</key>

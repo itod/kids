@@ -35,7 +35,7 @@ UIColor *TDHexaColor(NSString *str) {
 @implementation CanvasViewController
 
 - (void)dealloc {
-    self.canvas = nil;
+    self.canvas = nil; 
     self.scene = nil;
     [super dealloc];
 }
