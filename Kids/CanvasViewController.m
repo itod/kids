@@ -99,15 +99,12 @@ UIColor *TDHexaColor(NSString *str) {
             [v setValue:@(i) forKey:@"tag"];
             
             UIColor *backgroundColor = TDHexaColor(target[@"backgroundColor"]);
-            TDAssert(backgroundColor);
-
             UIColor *borderColor = TDHexaColor(target[@"borderColor"]);
-            TDAssert(backgroundColor);
 
             v.backgroundColor = [backgroundColor CGColor];
             v.borderColor = [borderColor CGColor];
-            v.borderWidth = 10.0;
-            v.cornerRadius = 10.0;
+            v.borderWidth = [target[@"borderWidth"] doubleValue];
+            v.cornerRadius = [target[@"cornerRadius"] doubleValue];
             
             [self.view.layer insertSublayer:v below:_canvas.layer];
             
@@ -156,15 +153,13 @@ UIColor *TDHexaColor(NSString *str) {
             [v removeAllAnimations];
             v.delegate = self;
 
-//            UIColor *backgroundColor = TDHexaColor(figure[@"backgroundColor"]);
-//            TDAssert(backgroundColor);
-//            
-//            UIColor *borderColor = [UIColor blackColor];//TDHexaColor(@"00000000");
-//            TDAssert(backgroundColor);
-//            
-//            v.backgroundColor = [backgroundColor CGColor];
-//            v.borderColor = [borderColor CGColor];
-//            v.borderWidth = 10.0;
+            UIColor *backgroundColor = TDHexaColor(figure[@"backgroundColor"]);
+            UIColor *borderColor = TDHexaColor(figure[@"borderColor"]);
+            
+            v.backgroundColor = [backgroundColor CGColor];
+            v.borderColor = [borderColor CGColor];
+            v.borderWidth = [figure[@"borderWidth"] doubleValue];
+            v.cornerRadius = [figure[@"cornerRadius"] doubleValue];
 
             [_canvas.layer addSublayer:v];
             ++i;
