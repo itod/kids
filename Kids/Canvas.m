@@ -32,9 +32,12 @@
     CGPoint p = [[touches anyObject] locationInView:self];
     
     CALayer *v = [self.layer hitTest:p];
-    //NSLog(@"%@, %@", NSStringFromCGPoint(p), v);
     
     if (v != self.layer) {
+        while ([[v valueForKey:@"tag"] integerValue] < 0) {
+            v = v.superlayer;
+        }
+        
         CGPoint vloc = v.position;
         self.dragOffset = CGSizeMake(vloc.x - p.x, vloc.y - p.y);
         self.draggingView = v;
