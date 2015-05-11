@@ -48,6 +48,18 @@
     return YES;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSInteger row = [sender tag];
+
+    if ([SCENE_CELL_ID isEqualToString:[sender reuseIdentifier]]) {
+        CanvasViewController *cvc = segue.destinationViewController;
+        id scene = _scenes[row];
+        cvc.scene = scene;
+    } else {
+        TDAssert(0);
+    }
+}
+
 #pragma mark -
 #pragma mark UITableViewDataSource
 
@@ -57,12 +69,15 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)path {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:SCENE_CELL_ID];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:SCENE_CELL_ID forIndexPath:path];
+    TDAssert(cell);
     
-    if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SCENE_CELL_ID] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    cell.tag = path.row;
+    
+//    if (!cell) {
+//        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SCENE_CELL_ID] autorelease];
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    }
     
     id scene = _scenes[path.row];
     NSAssert(scene, nil);
@@ -77,15 +92,16 @@
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path {
-    NSAssert(path.row >= 0 && path.row < [_scenes count], nil);
-    
-    id scene = _scenes[path.row];
-    
-    CanvasViewController *cvc = [[[CanvasViewController alloc] initWithScene:scene] autorelease];
-    [self.navigationController pushViewController:cvc animated:YES];
-    
-    return path;
-}
+//- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)path {
+//    NSAssert(path.row >= 0 && path.row < [_scenes count], nil);
+//    
+//    id scene = _scenes[path.row];
+//    
+//    
+//    CanvasViewController *cvc = [[[CanvasViewController alloc] initWithScene:scene] autorelease];
+//    [self.navigationController pushViewController:cvc animated:YES];
+//    
+//    return path;
+//}
 
 @end

@@ -27,14 +27,14 @@ UIColor *TDHexaColor(NSString *str) {
 
 @implementation CanvasViewController
 
-- (instancetype)initWithScene:(NSDictionary *)scene {
-    NSAssert(scene, nil);
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
-    if (self) {
-        self.scene = scene;
-    }
-    return self;
-}
+//- (instancetype)initWithScene:(NSDictionary *)scene {
+//    NSAssert(scene, nil);
+//    self = [super initWithNibName:NSStringFromClass([self class]) bundle:nil];
+//    if (self) {
+//        self.scene = scene;
+//    }
+//    return self;
+//}
 
 - (void)dealloc {
     self.containerView = nil;

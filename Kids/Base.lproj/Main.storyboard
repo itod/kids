@@ -13,13 +13,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Scene" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="jQr-jO-BJH">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Scene" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Scene" id="jQr-jO-BJH">
                                 <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jQr-jO-BJH" id="f2g-6A-SIF">
                                     <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XtV-ES-8Yh" kind="push" id="0WX-Kw-5MP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,6 +37,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPI-4C-uub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="551" y="206"/>
+        </scene>
+        <!--Canvas View Controller-->
+        <scene sceneID="rFy-Hv-Ze2">
+            <objects>
+                <viewController id="XtV-ES-8Yh" customClass="CanvasViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JSa-Gg-9zv">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="54v-iT-GzL" customClass="Canvas">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="980"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="gQg-9P-WAR"/>
+                    <connections>
+                        <outlet property="canvas" destination="54v-iT-GzL" id="N9W-9g-S5s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSq-sb-O9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376" y="206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Cm-Me-2fy">
