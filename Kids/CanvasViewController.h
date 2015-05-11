@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class Canvas;
 
+@interface CanvasViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet Canvas *canvas;
 @end
 
