@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D36735FF1B002855006458D7 /* Canvas.m in Sources */ = {isa = PBXBuildFile; fileRef = D36735FE1B002855006458D7 /* Canvas.m */; };
+		D367360C1B003902006458D7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D367360A1B003902006458D7 /* ListViewController.m */; };
+		D367360F1B0039DE006458D7 /* Scenes.plist in Resources */ = {isa = PBXBuildFile; fileRef = D367360E1B0039DE006458D7 /* Scenes.plist */; };
 		D39214551B00144500927037 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D39214541B00144500927037 /* main.m */; };
 		D39214581B00144500927037 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D39214571B00144500927037 /* AppDelegate.m */; };
 		D392145B1B00144500927037 /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D392145A1B00144500927037 /* CanvasViewController.m */; };
@@ -30,10 +32,13 @@
 /* Begin PBXFileReference section */
 		D36735FD1B002855006458D7 /* Canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Canvas.h; sourceTree = "<group>"; };
 		D36735FE1B002855006458D7 /* Canvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Canvas.m; sourceTree = "<group>"; };
+		D36736091B003902006458D7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		D367360A1B003902006458D7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		D367360E1B0039DE006458D7 /* Scenes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Scenes.plist; sourceTree = "<group>"; };
 		D392144F1B00144500927037 /* Kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39214531B00144500927037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39214541B00144500927037 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D39214561B00144500927037 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D39214561B00144500927037 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D39214571B00144500927037 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D39214591B00144500927037 /* CanvasViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
 		D392145A1B00144500927037 /* CanvasViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
@@ -86,9 +91,11 @@
 			children = (
 				D39214561B00144500927037 /* AppDelegate.h */,
 				D39214571B00144500927037 /* AppDelegate.m */,
+				D392145C1B00144500927037 /* Main.storyboard */,
+				D36736091B003902006458D7 /* ListViewController.h */,
+				D367360A1B003902006458D7 /* ListViewController.m */,
 				D39214591B00144500927037 /* CanvasViewController.h */,
 				D392145A1B00144500927037 /* CanvasViewController.m */,
-				D392145C1B00144500927037 /* Main.storyboard */,
 				D36735FD1B002855006458D7 /* Canvas.h */,
 				D36735FE1B002855006458D7 /* Canvas.m */,
 				D392145F1B00144500927037 /* Images.xcassets */,
@@ -101,6 +108,7 @@
 		D39214521B00144500927037 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D367360E1B0039DE006458D7 /* Scenes.plist */,
 				D39214531B00144500927037 /* Info.plist */,
 				D39214541B00144500927037 /* main.m */,
 			);
@@ -207,6 +215,7 @@
 				D392145E1B00144500927037 /* Main.storyboard in Resources */,
 				D39214631B00144500927037 /* LaunchScreen.xib in Resources */,
 				D39214601B00144500927037 /* Images.xcassets in Resources */,
+				D367360F1B0039DE006458D7 /* Scenes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D367360C1B003902006458D7 /* ListViewController.m in Sources */,
 				D392145B1B00144500927037 /* CanvasViewController.m in Sources */,
 				D39214581B00144500927037 /* AppDelegate.m in Sources */,
 				D39214551B00144500927037 /* main.m in Sources */,
