@@ -17,6 +17,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
+    // Seed (only once)
+    srand48(arc4random());
+    
     return YES;
 }
 

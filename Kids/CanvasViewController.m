@@ -95,10 +95,19 @@ UIColor *TDHexaColor(NSString *str) {
             
             v.tag = i;
             v.userInteractionEnabled = YES;
-            CGRect r = v.frame;
-            r.origin.x += i * 80.0;
-            r.size = CGSizeMake(100.0, 100.0);
-            v.frame = r;
+            
+            // FRAME
+            {
+                CGFloat w = 100.0, h = 100.0;
+                CGRect canvasRect = CGRectInset(_canvas.bounds, w, h);
+                
+                CGRect r = v.frame;
+                r.origin.x = round(drand48() * canvasRect.size.width);
+                r.origin.y = round(drand48() * canvasRect.size.height);
+                
+                r.size = CGSizeMake(w, h);
+                v.frame = r;
+            }
             
             [_canvas addSubview:v];
             ++i;
