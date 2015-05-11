@@ -38,8 +38,11 @@
     NSUInteger i = 0;
     for (id figure in _scene[@"figures"]) {
         NSString *imgName = figure[@"imageName"];
+        NSAssert([imgName length], nil);
         
         UIImage *img = [UIImage imageNamed:imgName];
+        NSAssert(img, nil);
+        
         UIView *iv = [[[UIImageView alloc] initWithImage:img] autorelease];
         iv.tag = i;
         iv.userInteractionEnabled = YES;
