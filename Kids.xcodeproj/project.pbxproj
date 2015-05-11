@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D36735FF1B002855006458D7 /* Canvas.m in Sources */ = {isa = PBXBuildFile; fileRef = D36735FE1B002855006458D7 /* Canvas.m */; };
 		D39214551B00144500927037 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D39214541B00144500927037 /* main.m */; };
 		D39214581B00144500927037 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D39214571B00144500927037 /* AppDelegate.m */; };
 		D392145B1B00144500927037 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D392145A1B00144500927037 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D36735FD1B002855006458D7 /* Canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Canvas.h; sourceTree = "<group>"; };
+		D36735FE1B002855006458D7 /* Canvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Canvas.m; sourceTree = "<group>"; };
 		D392144F1B00144500927037 /* Kids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39214531B00144500927037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39214541B00144500927037 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				D39214591B00144500927037 /* ViewController.h */,
 				D392145A1B00144500927037 /* ViewController.m */,
 				D392145C1B00144500927037 /* Main.storyboard */,
+				D36735FD1B002855006458D7 /* Canvas.h */,
+				D36735FE1B002855006458D7 /* Canvas.m */,
 				D392145F1B00144500927037 /* Images.xcassets */,
 				D39214611B00144500927037 /* LaunchScreen.xib */,
 				D39214521B00144500927037 /* Supporting Files */,
@@ -222,6 +227,7 @@
 				D392145B1B00144500927037 /* ViewController.m in Sources */,
 				D39214581B00144500927037 /* AppDelegate.m in Sources */,
 				D39214551B00144500927037 /* main.m in Sources */,
+				D36735FF1B002855006458D7 /* Canvas.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +276,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -314,7 +319,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
