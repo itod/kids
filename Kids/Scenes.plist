@@ -101,60 +101,36 @@
 					<string>Chase</string>
 					<key>imageName</key>
 					<string>Chase</string>
-					<key>backgroundColor</key>
-					<string>00000000</string>
-					<key>borderColor</key>
-					<string>00000000</string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>Marshall</string>
 					<key>imageName</key>
 					<string>Marshall</string>
-					<key>backgroundColor</key>
-					<string>00000000</string>
-					<key>borderColor</key>
-					<string>00000000</string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>Rocky</string>
 					<key>imageName</key>
 					<string>Rocky</string>
-					<key>backgroundColor</key>
-					<string>00000000</string>
-					<key>borderColor</key>
-					<string>00000000</string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>Zuma</string>
 					<key>imageName</key>
 					<string>Zuma</string>
-					<key>backgroundColor</key>
-					<string>00000000</string>
-					<key>borderColor</key>
-					<string>00000000</string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>Rubble</string>
 					<key>imageName</key>
 					<string>Rubble</string>
-					<key>backgroundColor</key>
-					<string>00000000</string>
-					<key>borderColor</key>
-					<string>00000000</string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>Sky</string>
 					<key>imageName</key>
 					<string>Skye</string>
-					<key>backgroundColor</key>
-					<string>00000000</string>
-					<key>borderColor</key>
-					<string>00000000</string>
 				</dict>
 			</array>
 		</dict>
@@ -204,7 +180,7 @@
                 </dict>
                 <dict>
                     <key>name</key>
-                    <string>Mrs Potts</string>
+                    <string>Mrs. Potts</string>
                     <key>imageName</key>
                     <string>MrsPotts</string>
                 </dict>
