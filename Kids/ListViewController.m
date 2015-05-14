@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = NSLocalizedString(@"Shows", nil);
+    self.title = NSLocalizedString(@"Home", nil);
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Scenes" ofType:@"plist"];
     id plist = [NSDictionary dictionaryWithContentsOfFile:path];
