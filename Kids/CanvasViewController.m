@@ -9,8 +9,8 @@
 #import "CanvasViewController.h"
 #import "Canvas.h"
 
-#define FIGURE_WIDTH 120.0
-#define FIGURE_HEIGHT 120.0
+#define FIGURE_WIDTH 100.0
+#define FIGURE_HEIGHT 100.0
 
 #define FONT_SIZE 24.0
 #define TEXT_HEIGHT 30.0
@@ -119,6 +119,15 @@ UIColor *TDHexaColor(NSString *str) {
 - (void)doLayout {
     [self layoutTargets];
     [self layoutFigures];
+
+    NSString *imgName = _scene[@"imageName"];
+    if (imgName) {
+        CGRect bounds = _canvas.bounds;
+        UIImage *img = [UIImage imageNamed:imgName];
+        UIImageView *iv = [[[UIImageView alloc] initWithImage:img] autorelease];
+        [iv setFrame:bounds];
+        [self.view insertSubview:iv belowSubview:_canvas];
+    }
 }
 
 - (void)layoutTargets {

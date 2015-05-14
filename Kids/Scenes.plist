@@ -4,6 +4,271 @@
 <dict>
 	<key>scenes</key>
 	<array>
+        <dict>
+            <key>name</key>
+            <string>NFL Map</string>
+            <key>imageName</key>
+            <string>usa</string>
+            <key>figures</key>
+            <array>
+                <dict>
+                    <key>name</key>
+                    <string>49ers</string>
+                    <key>imageName</key>
+                    <string>49ers</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Bears</string>
+                    <key>imageName</key>
+                    <string>Bears</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Bengals</string>
+                    <key>imageName</key>
+                    <string>Bengals</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Bills</string>
+                    <key>imageName</key>
+                    <string>Bills</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Broncos</string>
+                    <key>imageName</key>
+                    <string>Broncos</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Browns</string>
+                    <key>imageName</key>
+                    <string>Browns</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Buccaneers</string>
+                    <key>imageName</key>
+                    <string>Buccaneers</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Cardinals</string>
+                    <key>imageName</key>
+                    <string>Cardinals</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Chargers</string>
+                    <key>imageName</key>
+                    <string>Chargers</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Chiefs</string>
+                    <key>imageName</key>
+                    <string>Chiefs</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Colts</string>
+                    <key>imageName</key>
+                    <string>Colts</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Cowboys</string>
+                    <key>imageName</key>
+                    <string>Cowboys</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Dolphins</string>
+                    <key>imageName</key>
+                    <string>Dolphins</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Eagles</string>
+                    <key>imageName</key>
+                    <string>Eagles</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Falcons</string>
+                    <key>imageName</key>
+                    <string>Falcons</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Giants</string>
+                    <key>imageName</key>
+                    <string>Giants</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Jaguars</string>
+                    <key>imageName</key>
+                    <string>Jaguars</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Jets</string>
+                    <key>imageName</key>
+                    <string>Jets</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Lions</string>
+                    <key>imageName</key>
+                    <string>Lions</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Packers</string>
+                    <key>imageName</key>
+                    <string>Packers</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Panthers</string>
+                    <key>imageName</key>
+                    <string>Panthers</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Patriots</string>
+                    <key>imageName</key>
+                    <string>Patriots</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Raiders</string>
+                    <key>imageName</key>
+                    <string>Raiders</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Rams</string>
+                    <key>imageName</key>
+                    <string>Rams</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Ravens</string>
+                    <key>imageName</key>
+                    <string>Ravens</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Redskins</string>
+                    <key>imageName</key>
+                    <string>Redskins</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Saints</string>
+                    <key>imageName</key>
+                    <string>Saints</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Seahawks</string>
+                    <key>imageName</key>
+                    <string>Seahawks</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Steelers</string>
+                    <key>imageName</key>
+                    <string>Steelers</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Texans</string>
+                    <key>imageName</key>
+                    <string>Texans</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Titans</string>
+                    <key>imageName</key>
+                    <string>Titans</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Vikings</string>
+                    <key>imageName</key>
+                    <string>Vikings</string>
+                    <key>size</key>
+                    <string>{100.0, 50.0}</string>
+                </dict>
+            </array>
+        </dict>
 		<dict>
 			<key>name</key>
 			<string>Paw Patrol</string>
