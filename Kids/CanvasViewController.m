@@ -59,6 +59,7 @@ UIColor *TDHexaColor(NSString *str) {
 
     [self performSelector:@selector(doLayout) withObject:nil afterDelay:0.0];
     
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,12 +115,16 @@ UIColor *TDHexaColor(NSString *str) {
 
 - (void)orientationDidChange:(NSNotification *)n {
     [self layoutTargets];
+    [self showBackground];
 }
 
 - (void)doLayout {
     [self layoutTargets];
     [self layoutFigures];
+    [self showBackground];
+}
 
+- (void)showBackground {
     NSString *imgName = _scene[@"imageName"];
     if (imgName) {
         CGRect bounds = _canvas.bounds;
