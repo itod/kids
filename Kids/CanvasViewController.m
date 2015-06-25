@@ -165,9 +165,14 @@ UIColor *TDHexaColor(NSString *str) {
         // FRAME
         {
             TDAssert(target[@"location"]);
-            TDAssert(target[@"size"]);
-            
-            CGSize size = CGSizeFromString(target[@"size"]);
+
+            CGSize size;
+            id sizeObj = target[@"size"];
+            if (sizeObj) {
+                size = CGSizeFromString(sizeObj);
+            } else {
+                size = CGSizeMake(200.0, 200.0);
+            }
             
             NSString *locStr = target[@"location"];
             CGFloat x = 0.0, y = 0.0;
@@ -190,6 +195,12 @@ UIColor *TDHexaColor(NSString *str) {
             } else if ([locStr isEqualToString:@"bottomRight"]) {
                 x = CGRectGetMaxX(bounds) - size.width;
                 y = CGRectGetMaxY(bounds) - size.height;
+            } else if ([locStr isEqualToString:@"bottomMiddle"]) {
+                x = CGRectGetMidX(bounds) - size.width*0.5;
+                y = CGRectGetMaxY(bounds) - size.height;
+            } else if ([locStr isEqualToString:@"topMiddle"]) {
+                x = CGRectGetMidX(bounds) - size.width*0.5;
+                y = CGRectGetMinY(bounds);
             } else {
                 CGPoint locPt = CGPointFromString(locStr);
                 x = locPt.x;
@@ -230,6 +241,14 @@ UIColor *TDHexaColor(NSString *str) {
         v.contentsGravity = kCAGravityCenter;
         
         CGSize size = CGSizeMake(FIGURE_WIDTH, FIGURE_HEIGHT);
+        UIColor *fgColor = nil;
+        id fgColorObj = figure[@"foregroundColor"];
+        if (fgColorObj) {
+            fgColor = TDHexaColor(fgColorObj);
+        } else {
+            fgColor = [UIColor blackColor];
+        }
+        
         
         NSString *name = figure[@"name"];
         if (name) {
@@ -242,7 +261,7 @@ UIColor *TDHexaColor(NSString *str) {
             
             tv.string = name;
             tv.fontSize = FONT_SIZE;
-            tv.foregroundColor = [[UIColor blackColor] CGColor];
+            tv.foregroundColor = [fgColor CGColor];
             tv.alignmentMode = kCAAlignmentCenter;
             
             tv.frame = CGRectMake(0.0, 0.0, size.width, TEXT_HEIGHT);
@@ -264,9 +283,12 @@ UIColor *TDHexaColor(NSString *str) {
             iv.frame = CGRectMake(0.0, 0.0, size.width - TEXT_HEIGHT, size.height - TEXT_HEIGHT);
             [v addSublayer:iv];
         } else {
-            TDAssert(figure[@"size"]);
-            
-            size = CGSizeFromString(figure[@"size"]);
+            id sizeObj = figure[@"size"];
+            if (sizeObj) {
+                size = CGSizeFromString(sizeObj);
+            } else {
+                size = CGSizeMake(200.0, 40.0);
+            }
         }
         
         // FRAME
