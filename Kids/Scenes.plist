@@ -1312,6 +1312,39 @@
 				</dict>
 			</array>
 		</dict>
+        
+		<dict>
+			<key>name</key>
+			<string>Woody Body</string>
+			<key>figures</key>
+			<array>
+				<dict>
+                    <key>imageName</key>
+                    <string>woody_torso</string>
+				</dict>
+				<dict>
+                    <key>imageName</key>
+                    <string>woody_head</string>
+				</dict>
+				<dict>
+                    <key>imageName</key>
+                    <string>woody_right_arm</string>
+				</dict>
+				<dict>
+                    <key>imageName</key>
+                    <string>woody_left_arm</string>
+				</dict>
+				<dict>
+                    <key>imageName</key>
+                    <string>woody_right_leg</string>
+				</dict>
+				<dict>
+                    <key>imageName</key>
+                    <string>woody_left_leg</string>
+				</dict>
+			</array>
+		</dict>
+        
 	</array>
 </dict>
 </plist>

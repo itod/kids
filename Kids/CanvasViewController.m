@@ -273,6 +273,7 @@ UIColor *TDHexaColor(NSString *str) {
         if (imgName) {
             UIImage *img = [UIImage imageNamed:imgName];
             TDAssert(img);
+            CGSize imgSize = img.size;
             
             CALayer *iv = [CALayer layer];
             iv.delegate = self;
@@ -280,7 +281,7 @@ UIColor *TDHexaColor(NSString *str) {
             [iv setValue:@"image" forKey:@"id"];
             
             iv.contents = (id)[img CGImage];
-            iv.frame = CGRectMake(0.0, 0.0, size.width - TEXT_HEIGHT, size.height - TEXT_HEIGHT);
+            iv.frame = CGRectMake(0.0, 0.0, imgSize.width - TEXT_HEIGHT, imgSize.height - TEXT_HEIGHT);
             [v addSublayer:iv];
         } else {
             id sizeObj = figure[@"size"];
