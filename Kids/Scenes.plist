@@ -1316,6 +1316,8 @@
 		<dict>
 			<key>name</key>
 			<string>Woody Body</string>
+			<key>figureSizeType</key>
+			<string>natural</string>
 			<key>figures</key>
 			<array>
 				<dict>
